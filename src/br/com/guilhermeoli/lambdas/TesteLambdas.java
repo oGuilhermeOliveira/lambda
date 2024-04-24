@@ -1,6 +1,7 @@
 package br.com.guilhermeoli.lambdas;
 
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 import java.util.function.IntBinaryOperator;
 
 /**
@@ -35,6 +36,12 @@ public class TesteLambdas {
             return v1 + v2;
         });
         System.out.println(returnLong);
+
+        Runnable hello_world = () -> System.out.println("Hello World");
+        Consumer<String> stringConsumer = (String s) -> {
+            System.out.println(s);
+        };
+        stringConsumer.accept("value");
     }
 
     private static Long calcular(Long t, Long u, BiFunction<Long, Long, Long> function) {
