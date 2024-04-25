@@ -3,6 +3,7 @@ package br.com.guilhermeoli.lambdas;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.IntBinaryOperator;
+import java.util.function.Supplier;
 
 /**
  * @author guiol
@@ -42,6 +43,13 @@ public class TesteLambdas {
             System.out.println(s);
         };
         stringConsumer.accept("value");
+
+
+        Supplier<Integer> integerCallable =  () -> 42;
+        Supplier<Double>  doubleCallable = () -> {
+          return 3.1415;
+        };
+
     }
 
     private static Long calcular(Long t, Long u, BiFunction<Long, Long, Long> function) {
